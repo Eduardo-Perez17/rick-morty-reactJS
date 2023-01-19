@@ -1,0 +1,50 @@
+@import '../../assets/sass/_variables.scss';
+
+.menu__header {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  .menu__header--navBar {
+    img {
+      width: 25px;
+    }
+
+    .menu__header--navBar-a {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $body-color;
+      box-shadow: 3px 3px 6px $shading;
+      transition: all 2s;
+
+      img {
+        float: right;
+        margin: 20px;
+        margin-left: 0;
+        width: 25px;
+      }
+
+      .menu__header--navBar-a-items {
+        margin: 40px;
+        margin-top: 60px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+
+        a {
+          text-transform: capitalize;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

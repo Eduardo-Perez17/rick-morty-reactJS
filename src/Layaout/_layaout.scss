@@ -1,0 +1,33 @@
+@import '../assets/sass/_variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  color: $text-color;
+}
+
+.button {
+  background-image: $gradient-color;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px $shading;
+}
+
+.grid-father {
+  background-color: $body-color;
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+}
+
+.grid-son {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}

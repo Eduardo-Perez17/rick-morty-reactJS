@@ -1,0 +1,74 @@
+@import '../../assets/sass/_variables.scss';
+
+.home {
+  margin: 60px 0;
+  display: grid;
+  gap: 10px;
+
+  .transparent {
+    color: $transparent;
+  }
+
+  h1 {
+    background: $gradient-color;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 120%;
+  }
+
+  .button__header--home {
+    margin-top: 20px;
+    width: 150px;
+    padding: 10px;
+
+    a {
+      color: #fff;
+      padding: 10px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+
+  // HOME ARTICLE
+
+  .home-article {
+    margin: 60px 0;
+
+    .home__article--data-tv {
+      margin: 50px 0;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+
+      .home__article--data-info {
+        text-align: center;
+      }
+      .home__article--data-info p:nth-child(1) {
+        font-weight: bold;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+  }
+
+  .home__article--error {
+    margin: 30px 0;
+    background-color: #f87171;
+    border-radius: 3px;
+    padding: 15px;
+    display: grid;
+    gap: 10px;
+
+    h4,
+    p {
+      color: #fff;
+    }
+  }
+}
