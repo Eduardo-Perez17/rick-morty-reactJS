@@ -1,0 +1,25 @@
+@mixin createColumnGrid($columnOne, $columnTwo, $columnThree) {
+  display: grid;
+  grid-template-columns: $columnOne $columnTwo $columnThree;
+}
+
+@mixin createColumnRepeatGrid($column, $proportion) {
+  display: grid;
+  grid-template-columns: repeat($column, $proportion);
+}
+
+@mixin displayContainer($display, $justify, $align) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flexContainerMainAxies {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin displayGapContainer($display, $gap) {
+  display: $display;
+  gap: $gap;
+}

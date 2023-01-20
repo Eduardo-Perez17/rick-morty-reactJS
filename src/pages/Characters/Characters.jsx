@@ -1,5 +1,11 @@
+import { Container } from '../../components/Container';
+
 const Characters = () => {
-  return <h3>Characters</h3>;
+  return (
+    <Container>
+      <h1>Characters</h1>
+    </Container>
+  );
 };
 
 export default Characters;
