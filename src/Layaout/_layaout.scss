@@ -1,4 +1,5 @@
 @import '../assets/sass/_variables.scss';
+@import '../assets/sass/_mixins.scss';
 
 * {
   margin: 0;
@@ -23,11 +24,50 @@ p {
 
 .grid-father {
   background-color: $body-color;
-  display: grid;
-  grid-template-columns: 30px 1fr 30px;
+  @include createColumnGrid(30px, 1fr, 30px);
 }
 
 .grid-son {
   grid-column-start: 2;
   grid-column-end: 3;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $first-color;
+  border-radius: 2px;
+}
+
+@media screen and (min-width: 420px) and (max-width: 768px) {
+  .grid-father {
+    @include createColumnGrid(60px, 1fr, 60px);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .grid-father {
+    @include createColumnGrid(110px, 1fr, 110px);
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .grid-father {
+    @include createColumnGrid(160px, 1fr, 160px);
+  }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2560px) {
+  .grid-father {
+    @include createColumnGrid(200px, 1fr, 200px);
+  }
+}
+
+@media screen and (min-width: 2561px) {
+  .grid-father {
+    @include createColumnGrid(250px, 1fr, 250px);
+  }
 }
