@@ -1,5 +1,9 @@
 const Characters = () => {
-  return <h3>Characters</h3>;
+  return (
+    <>
+      <></>
+    </>
+  );
 };
 
 export default Characters;
