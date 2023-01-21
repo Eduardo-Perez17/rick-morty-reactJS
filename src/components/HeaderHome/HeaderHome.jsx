@@ -27,7 +27,7 @@ const HeaderHome = () => {
       {!error ? (
         <HomeArticleInfo />
       ) : (
-        <Container containerStyle='home__article--error'>
+        <Container containerStyle='error__data__API'>
           <Title size='sm'>Ups...</Title>
           <Paragraph>there was an error... Please update the application</Paragraph>
           <Paragraph>If the error persists, contact the developers</Paragraph>

@@ -8,6 +8,10 @@ export const URL_API_ENDPOINTS = {
   episodes: 'https://rickandmortyapi.com/api/episode',
 };
 
+export const URL_API_ENDPOINTS_SEARCH = {
+  characters: 'https://rickandmortyapi.com/api/character/?name=',
+};
+
 export const HOME = {
   name: 'hogar',
   path: '/',

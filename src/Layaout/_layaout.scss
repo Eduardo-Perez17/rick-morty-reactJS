@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -40,6 +44,39 @@ p {
 ::-webkit-scrollbar-thumb {
   background: $first-color;
   border-radius: 2px;
+}
+
+.return-top {
+  background-color: $card-color;
+  border-radius: 5px;
+  padding: 5px;
+
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+.error__data__API {
+  margin: 30px 0;
+  background-color: #ff8585;
+  border-radius: 3px;
+  padding: 15px;
+  @include displayGapContainer(grid, 10px);
+}
+
+.main__error {
+  color: $white-color;
+  text-align: center;
+  @include displayContainer(grid, center, center);
+  .header__error {
+    justify-content: center;
+    align-items: center;
+    @include flexContainerMainAxies();
+  }
+
+  p {
+    color: $white-color;
+  }
 }
 
 @media screen and (min-width: 420px) and (max-width: 768px) {

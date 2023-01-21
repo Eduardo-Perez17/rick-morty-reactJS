@@ -4,10 +4,14 @@ import { URL_API_ENDPOINTS } from '../utils/endPoints';
 
 export const useReturnDataAPI = () => {
   const [infoTvShow, setInfoTvShow] = useState([]);
+  const [characters, setCharacters] = useState([]);
+  // const [locations, setLocations] = useState([]);
+  // const [episodes, setEpisodes] = useState([]);
   const [error, setError] = useState(false);
 
   const returnDataAPI = async () => {
     const dataTvShowAPI = [];
+
     try {
       const dataCharacter = await getDataAPI(URL_API_ENDPOINTS.characters);
       const dataLocation = await getDataAPI(URL_API_ENDPOINTS.locations);
@@ -15,6 +19,7 @@ export const useReturnDataAPI = () => {
 
       dataTvShowAPI.push({ infoCharacter: dataCharacter.info.count, infoLocation: dataLocation.info.count, infoEpisodie: dataEpisodie.info.count });
 
+      setCharacters(dataCharacter);
       setInfoTvShow(dataTvShowAPI);
     } catch {
       setError(true);
@@ -25,5 +30,5 @@ export const useReturnDataAPI = () => {
     returnDataAPI();
   }, []);
 
-  return { infoTvShow, error };
+  return { infoTvShow, error, characters, setCharacters };
 };
