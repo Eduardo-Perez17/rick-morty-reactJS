@@ -33,7 +33,7 @@ const Locations = () => {
 
       <PaginationCharacter next={locations.info?.next} prev={locations.info?.prev} onPrevious={onPrevious} onNext={onNext} />
 
-      <Container containerStyle='article__location'>{searchValue.length === 0 ? <LocationSearch locations={locations.results} /> : <LocationSearch locations={searchValue.results} />}</Container>
+      <Container containerStyle='article__location'>{locationSearch ? <LocationSearch locations={searchValue.results} /> : <LocationSearch locations={locations.results} />}</Container>
 
       <PaginationCharacter next={locations.info?.next} prev={locations.info?.prev} onPrevious={onPrevious} onNext={onNext} />
 

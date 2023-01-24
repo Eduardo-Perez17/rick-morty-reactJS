@@ -15,7 +15,7 @@ import { Error } from '../../components/Error';
 import { Title } from '../../components/Title';
 
 const Characters = () => {
-  const [characterInput, setCharacterInput] = useState();
+  const [characterInput, setCharacterInput] = useState('');
   const { characters, error, setCharacters } = useReturnDataAPI();
   const { searchValue, errorSearch, getDataSearch } = useDataSearch(characterInput);
   const { onPrevious, onNext } = usePagination(characters, setCharacters);
@@ -35,8 +35,7 @@ const Characters = () => {
             <Title size='md'>Oops...</Title>
           </Error>
         )}
-
-        {searchValue.length === 0 ? <CharactersSearch characterValue={characters} /> : <CharactersSearch characterValue={searchValue} />}
+        {characterInput ? <CharactersSearch characterValue={searchValue} /> : <CharactersSearch characterValue={characters} />}
       </Container>
 
       <PaginationCharacter next={characters.info?.next} prev={characters.info?.prev} onPrevious={onPrevious} onNext={onNext} />
