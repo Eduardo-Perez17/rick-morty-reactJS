@@ -10,6 +10,7 @@ export const URL_API_ENDPOINTS = {
 
 export const URL_API_ENDPOINTS_SEARCH = {
   characters: 'https://rickandmortyapi.com/api/character/?name=',
+  location: 'https://rickandmortyapi.com/api/location/?name=',
 };
 
 export const HOME = {

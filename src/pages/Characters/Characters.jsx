@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useCharacterSearch } from '../../context/useCharacterSearch';
+import { URL_API_ENDPOINTS_SEARCH } from '../../utils/endPoints';
+import { useDataSearch } from '../../context/useDataSearch';
 import { useReturnDataAPI } from '../../context/useReturnDataAPI';
-import { usePaginationCharacters } from '../../context/usePaginationCharacters';
+import { usePagination } from '../../context/usePagination';
 
 import './character.scss';
 
@@ -16,14 +17,14 @@ import { Title } from '../../components/Title';
 const Characters = () => {
   const [characterInput, setCharacterInput] = useState();
   const { characters, error, setCharacters } = useReturnDataAPI();
-  const { characterValue, errorSearch, getDataCharacterSearch } = useCharacterSearch(characterInput);
-  const { onPrevious, onNext } = usePaginationCharacters(characters, setCharacters);
+  const { searchValue, errorSearch, getDataSearch } = useDataSearch(characterInput);
+  const { onPrevious, onNext } = usePagination(characters, setCharacters);
 
   const characterInputValueHandle = (event) => setCharacterInput(event.target.value);
 
   return (
     <Container containerStyle='character' idContainer='header'>
-      <HeaderSearch title='Character' placheholder='characters...' name='input' onChangeEvent={characterInputValueHandle} onEventClick={getDataCharacterSearch} />
+      <HeaderSearch title='Character' placheholder='characters...' name='input' onChangeEvent={characterInputValueHandle} onEventClick={() => getDataSearch(URL_API_ENDPOINTS_SEARCH.characters)} />
       {errorSearch && <Error errorText='There was a mistake. update the app'></Error>}
 
       <PaginationCharacter next={characters.info?.next} prev={characters.info?.prev} onPrevious={onPrevious} onNext={onNext} />
@@ -35,7 +36,7 @@ const Characters = () => {
           </Error>
         )}
 
-        {characterValue.length === 0 ? <CharactersSearch characterValue={characters} /> : <CharactersSearch characterValue={characterValue} />}
+        {searchValue.length === 0 ? <CharactersSearch characterValue={characters} /> : <CharactersSearch characterValue={searchValue} />}
       </Container>
 
       <PaginationCharacter next={characters.info?.next} prev={characters.info?.prev} onPrevious={onPrevious} onNext={onNext} />

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { CharacterArticle } from '../../components/CharacterArticle';
 
 const CharactersSearch = ({ characterValue }) => {

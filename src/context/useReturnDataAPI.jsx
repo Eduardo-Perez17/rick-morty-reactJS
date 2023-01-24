@@ -1,3 +1,5 @@
+// PARAMETRIZAR Y VALIDAR ESTE CUSTOMHOOK
+
 import { useState, useEffect } from 'react';
 import { getDataAPI } from '../utils/fetching-return-data';
 import { URL_API_ENDPOINTS } from '../utils/endPoints';
@@ -5,7 +7,7 @@ import { URL_API_ENDPOINTS } from '../utils/endPoints';
 export const useReturnDataAPI = () => {
   const [infoTvShow, setInfoTvShow] = useState([]);
   const [characters, setCharacters] = useState([]);
-  // const [locations, setLocations] = useState([]);
+  const [locations, setLocations] = useState([]);
   // const [episodes, setEpisodes] = useState([]);
   const [error, setError] = useState(false);
 
@@ -19,6 +21,7 @@ export const useReturnDataAPI = () => {
 
       dataTvShowAPI.push({ infoCharacter: dataCharacter.info.count, infoLocation: dataLocation.info.count, infoEpisodie: dataEpisodie.info.count });
 
+      setLocations(dataLocation);
       setCharacters(dataCharacter);
       setInfoTvShow(dataTvShowAPI);
     } catch {
@@ -30,5 +33,5 @@ export const useReturnDataAPI = () => {
     returnDataAPI();
   }, []);
 
-  return { infoTvShow, error, characters, setCharacters };
+  return { infoTvShow, error, characters, setCharacters, locations, setLocations };
 };

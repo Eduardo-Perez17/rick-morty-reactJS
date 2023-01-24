@@ -3,9 +3,7 @@ import { Container } from '../Container';
 
 const PaginationCharacter = ({ next, prev, onPrevious, onNext }) => {
   const handlePrevoius = () => onPrevious();
-  const handleNext = () => {
-    onNext();
-  };
+  const handleNext = () => onNext();
 
   return (
     <Container containerStyle='pagination__button'>
