@@ -1,0 +1,55 @@
+@import '../../assets/sass/_variables.scss';
+@import '../../assets/sass/_mixins.scss';
+
+.episodie__article {
+  margin: 60px 0;
+  display: grid;
+  gap: 20px;
+
+  .episodie__card {
+    background-color: $card-color;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 15px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px #ccc;
+
+    .episodie__card--header {
+      text-align: center;
+    }
+
+    span {
+      margin: 0 10px;
+      background-color: $transparent;
+      width: 1px;
+      height: 100%;
+    }
+
+    .episodie__card--article {
+      display: grid;
+      gap: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 625px) and (max-width: 1560px) {
+  .episodie__article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1561px) and (max-width: 2561px) {
+  .episodie__article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .episodie__article {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
