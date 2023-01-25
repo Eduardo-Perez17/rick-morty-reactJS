@@ -30,7 +30,7 @@ const Episodies = () => {
         onEventClick={() => getDataSearch(URL_API_ENDPOINTS_SEARCH.episodie)}
       />
       <PaginationCharacter next={episodes.info?.next} prev={episodes.info?.prev} onPrevious={onPrevious} onNext={onNext} />
-      <Container containerStyle='episodie__article'>{episodieSearch ? <EpisodieSearch episodes={searchValue} episodieSearch={episodieSearch} /> : <EpisodieSearch episodes={episodes} />}</Container>
+      <Container containerStyle='episodie__article'>{episodieSearch ? <EpisodieSearch episodes={searchValue} /> : <EpisodieSearch episodes={episodes} />}</Container>
       <PaginationCharacter next={episodes.info?.next} prev={episodes.info?.prev} onPrevious={onPrevious} onNext={onNext} />
     </Container>
   );
